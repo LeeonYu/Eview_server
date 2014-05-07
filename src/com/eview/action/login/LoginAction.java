@@ -1,5 +1,6 @@
 package com.eview.action.login;
 
-public class LoginAction {
+import com.opensymphony.xwork2.ActionSupport;
+public class LoginAction extends ActionSupport{
 
 }

@@ -1,5 +1,7 @@
 package com.eview.action.book;
 
-public class BookAction {
+import com.opensymphony.xwork2.ActionSupport;
+
+public class BookAction extends ActionSupport{
 
 }

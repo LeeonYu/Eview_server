@@ -1,5 +1,7 @@
 package com.eview.action.bookkind;
 
-public class BookkindAction {
+import com.opensymphony.xwork2.ActionSupport;
+
+public class BookkindAction extends ActionSupport{
 
 }
