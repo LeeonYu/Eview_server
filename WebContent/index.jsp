@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div class="top topSkin">
+    <h1><img src="image/" alt="logo"></h1>
+</div>
+
 
 </body>
 </html>
