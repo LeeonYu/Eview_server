@@ -7,16 +7,20 @@ public class Book {
 	private int Addtime;
 	private String Url;
 	private String Kind;
+	private String Writer;
+	private String info;
 
 	public Book() {
 	}
 
-	public Book(int id, String Bname, int Addtime, String Url, String Kind) {
+	public Book(int id, String Bname, int Addtime, String Url, String Kind,String Writer,String info) {
 		this.id = id;
 		this.Bname = Bname;
 		this.Addtime = Addtime;
 		this.Url = Url;
 		this.Kind = Kind;
+		this.Writer = Writer;
+		this.info = info;
 	}
 
 	public int getId() {
@@ -59,4 +63,19 @@ public class Book {
 		Kind = kind;
 	}
 
+	public String getWriter() {
+		return Writer;
+	}
+
+	public void setWriter(String writer) {
+		Writer = writer;
+	}
+
+	public String getInfo() {
+		return info;
+	}
+
+	public void setInfo(String info) {
+		this.info = info;
+	}
 }

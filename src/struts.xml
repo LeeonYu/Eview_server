@@ -5,23 +5,20 @@
 <struts>
 	<package name="hotel" extends="struts-default">
 
-		<action name="userService" class="userAction">
-			<result name="success" type="redirect">/info/userInfo.jsp</result>
-			<result name="input" type="redirect">/login.jsp</result>
-			<result name="userUpdate" type="dispatcher">/info/changePwd.jsp</result>
-			<result name="updateSuc" type="dispatcher">/info/result.jsp</result>
+		<action name="Login" class="LoginAction">
+			<result name="success" type="redirect">/jsp/loginsuccess.jsp</result>
+			<result name="login" type="redirect">/Login.jsp</result>
+			<result name="reg" type="redirect">/jsp/Register.jsp</result>
+			<result name="logerr" type="redirect">/jsp/Loginerror.jsp</result>
 		</action>
 
-		<action name="adminService" class="adminServiceAction">
-			<result name="loginSuc" type="redirect">/info/adminInfo.jsp</result>
-			<result name="input" type="redirect">/adminLogin.jsp</result>
+		<action name="bookkind" class="BookkindAction">
+			<result name="seccess" type="redirect">/index.jsp</result>
+			<result name="error" type="redirect">/jsp/NotFound.jsp</result>
 		</action>
 
-		<action name="saveUser" class="saveUserAction">
-			<result name="success" type="redirect">
-				<param name="actionName">listUser.action</param>
-			</result>
-			<result name="regSuc" type="dispatcher">/info/userInfo.jsp</result>
+		<action name="Book" class="BookAction">
+			<result name="success" type="redirect">/index.jsp</result>
 		</action>
 
 	</package>
@@ -55,68 +52,6 @@
 		</action>
 	</package>
 
-	<!-- 管理员后才能访问的action  -->
-	<package name="authorityAdmin" extends="struts-default">
-		<interceptors>
-			<interceptor name="authorityAdmin" class="com.integration.interceptor.AdminInterceptor" />
-			<interceptor-stack name="mydefaultAdmin">
-				<interceptor-ref name="defaultStack" />
-				<interceptor-ref name="authorityAdmin" />
-			</interceptor-stack>
-		</interceptors>
-		<default-interceptor-ref name="mydefaultAdmin"></default-interceptor-ref>
 
-		<global-results>
-			<result name="login">/adminLogin.jsp</result>
-		</global-results>
-
-		<!-- user -->
-		<action name="listUser" class="listUserAction">
-			<result name="success">/user/list.jsp</result>
-		</action>
-
-		<action name="deleteUser" class="removeUserAction">
-			<result name="success" type="redirect">listUser.action</result>
-		</action>
-
-		<action name="updatePUser" class="updatePUserAction">
-			<result name="success">/user/update.jsp</result>
-		</action>
-
-		<action name="updateUser" class="updateUserAction">
-			<result name="success" type="redirect">listUser.action</result>
-		</action>
-
-		<!-- admin -->
-		<action name="saveAdmin" class="saveAdminAction">
-			<result name="success" type="redirect">/index.jsp</result>
-		</action>
-
-		<!-- hotel -->
-		<action name="saveRoom" class="saveRoomAction">
-			<result name="success" type="redirect">listRoom.action</result>
-		</action>
-
-		<action name="listRoom" class="listRoomAction">
-			<result name="success">/room/list.jsp</result>
-		</action>
-
-		<action name="deleteRoom" class="removeRoomAction">
-			<result name="success" type="redirect">listRoom.action</result>
-		</action>
-
-		<action name="updatePRoom" class="updatePRoomAction">
-			<result name="success">/room/update.jsp</result>
-		</action>
-
-		<action name="updateRoom" class="updateRoomAction">
-			<result name="success" type="redirect">listRoom.action</result>
-		</action>
-
-		<!-- order -->
-		<action name="listOrder" class="listOrderAction">
-			<result name="success" type="dispatcher">/order/list.jsp</result>
-		</action>
-	</package>
 
 </struts>

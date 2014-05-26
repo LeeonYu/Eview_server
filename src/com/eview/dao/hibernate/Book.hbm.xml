@@ -12,6 +12,8 @@ PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 		<property name="Url" column="Url" type="string"></property>
 		<property name="Addtime" column="Addtime" type="int"></property>
 		<property name="Kind" column="Kind" type="int"></property>
+		<property name="Writer" column="Writer" type="String"></property>
+		<property name="info" column="info" type="String"></property>
 	</class>
 </hibernate-mapping>
 
