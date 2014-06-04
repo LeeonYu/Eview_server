@@ -8,5 +8,5 @@ import com.eview.dao.hibernate.User;
 public interface UserServiceImpl {
 	List<User> findAll();
 	void Login(User user);
-
+	void Reg(User user);
 }

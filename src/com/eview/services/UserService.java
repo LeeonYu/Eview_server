@@ -16,6 +16,10 @@ public class UserService implements UserServiceImpl{
 	public void Login(User user){
 		userDao.loginUser(user);
 	}
-	
 
+
+	public void Reg(User user) {
+		userDao.Reg(user);
+	}
+	
 }

@@ -11,8 +11,8 @@ public class UserDao extends HibernateDaoSupport{
 	}
 	@SuppressWarnings("unchecked")
 	public List<User> findAllUsers() {
-		String hql = "from User user order by logininfo.id desc";
-		return (List<User>) this.getHibernateTemplate().find(hql);
+		String sql = "from logininfo UserName order by logininfo.id desc";
+		return (List<User>) this.getHibernateTemplate().find(sql);
 	}
 	public void removeUser(User user) {
 		this.getHibernateTemplate().delete(user);
@@ -27,10 +27,10 @@ public class UserDao extends HibernateDaoSupport{
 	}
 	@SuppressWarnings("unchecked")
 	public User loginUser(User user) {
-		String hql = "from User user where logininfo.username='"
-				+ user.getName() + "' and logininfo.password='"
+		String sql = "from logininfo UserName where user.username='"
+				+ user.getName() + "' and user.password='"
 				+ user.getPwd() + "'";
-		List<User> users = (List<User>) this.getHibernateTemplate().find(hql);
+		List<User> users = (List<User>) this.getHibernateTemplate().find(sql);
 		if (users.size() > 0) {
 			return users.get(0);
 		}
@@ -38,8 +38,12 @@ public class UserDao extends HibernateDaoSupport{
 	}
 	@SuppressWarnings("unchecked")
 	public List<User> findAll() {
-			String queryString = "from User";
+			String queryString = "from logininfo";
 			List<User> list =this.getHibernateTemplate().find(queryString);
 			return list;
+	}
+	public void Reg(User user) {
+		// TODO Auto-generated method stub
+		
 	}
 }

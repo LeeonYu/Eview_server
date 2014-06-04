@@ -20,5 +20,6 @@ public class BookDao extends HibernateDaoSupport{
 		String sql = "from Book book order by bookinfo.kind";
 		return (List<Book>) this.getHibernateTemplate().find(sql);
 	}
+
 	
 }
