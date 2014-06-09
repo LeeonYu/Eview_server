@@ -5,38 +5,24 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
 	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
-	<context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>
-			/WEB-INF/bookstore-dao.xml,
-			/WEB-INF/bookstore-service.xml,
-			/WEB-INF/bookstore-servlet.xml
-		</param-value>
-	</context-param>
-	
-		 <context-param>
-  <param-name>contextConfigLoaction</param-name>
-  <param-value>/WEB-INF/applicationContext.xml</param-value>
- </context-param>
-	
-	<welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
+	<!-- 定义Filter -->
+	<filter>
+		<!-- 指定Filter的名字，不能为空 -->
+		<filter-name>struts2</filter-name>
+		<!-- 指定Filter的实现类，此处使用的是Struts2提供的过滤器类 -->
+		<filter-class>
+                              org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
+                      </filter-class>
+	</filter>
+	<!-- 定义Filter所拦截的URL地址 -->
+	<filter-mapping>
+		<!-- Filter的名字，该名字必须是filter元素中已声明过的过滤器名字 -->
+   		<filter-name>struts2</filter-name>
+		<!-- 定义Filter负责拦截的URL地址 -->
+   		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+    <welcome-file-list>
+        <welcome-file>domain.jsp</welcome-file>
     </welcome-file-list>
-    
-  
- 	   <!--pager -->
- <jsp-config>
- 	 <taglib>
-    <taglib-uri>
-      http://jsptags.com/tags/navigation/pager
-    </taglib-uri>
-    <taglib-location>
-      /WEB-INF/view/include/pager-taglib.tld
-    </taglib-location>
-  </taglib>
-  
-  </jsp-config>
- 
-
  	
 </web-app>

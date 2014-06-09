@@ -15,11 +15,14 @@ public class BookDao extends HibernateDaoSupport{
 		return (List<Book>) this.getHibernateTemplate().find(sql);
 		
 	}
-	public List<Book> sortByKind(Book book){
-		String kind=book.getKind();
-		String sql = "from Book book order by bookinfo.kind";
+	public List<Book> sortByKind(String kind){
+		String sql = "from Book book order by 'kind'";
 		return (List<Book>) this.getHibernateTemplate().find(sql);
 	}
-
+	public String findBname(int id){
+		String sql ="form Book book order by 'id'";
+		return null;
+		
+	}
 	
 }

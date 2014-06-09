@@ -1,0 +1,24 @@
+﻿<c3p0-config>
+	<!-- 必须要拥有默认的配置 -->
+	<default-config>
+		<!-- 连接的超时时间，豪秒 -->
+		<property name="checkoutTimeout">3000</property>
+		<!-- 一个连接的最大空闲时间 30秒 -->
+		<property name="maxIdleTime">30</property>
+		<!-- 初始化池中的连接的数量 -->
+		<property name="initialPoolSize">2</property>
+		<!-- 最多有几个连接 -->
+		<property name="maxPoolSize">3</property>
+		<!-- 最少有几个连接 -->
+		<property name="minPoolSize">2</property>
+		<!-- 每次最多可以执行多少sql语句 50~200 -->
+		<property name="maxStatements">50</property>
+		
+		<property name="driverClass">com.mysql.jdbc.Driver</property>
+		<property name="jdbcUrl">jdbc:mysql://127.0.0.1:3306/eviewstore?characterEncoding=UTF-8</property>
+		<property name="user">root</property>
+		<property name="password">1234</property>
+		<!-- 设置每次连接不够时增加几个 -->
+		<property name="acquireIncrement">2</property>
+	</default-config> 
+</c3p0-config> 

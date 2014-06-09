@@ -18,9 +18,12 @@
 		</action>
 
 		<action name="Book" class="BookAction">
-			<result name="success" type="redirect">/index.jsp</result>
+			<result name="success" type="redirect">/BD.do</result>
 		</action>
-
+		<action name="BD" class="BookDetailAction">
+			<result name="success" type="redirect"></result>
+		</action>
+		
 	</package>
 
 	<!-- 用户登录后才能访问的action -->
